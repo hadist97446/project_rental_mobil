@@ -1,0 +1,366 @@
+/* --- Umum --- */
+:root {
+    --primary-color: #0056b3; /* Darker blue for primary elements */
+    --secondary-color: #6c757d; /* Grey for secondary elements */
+    --accent-color: #28a745; /* Green for success/accent */
+    --danger-color: #dc3545; /* Red for danger/alert */
+    --bg-light: #f8f9fa; /* Light background */
+    --text-dark: #343a40; /* Dark text */
+    --text-light: #ffffff; /* Light text */
+    --border-color: #dee2e6; /* Border color */
+    --card-bg: #ffffff; /* Card background */
+    --header-bg: #343a40; /* Dark header background */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%; /* Lebarkan sedikit container */
+    max-width: 1200px; /* Batasi lebar maksimal */
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* --- Header --- */
+header {
+    background: var(--header-bg);
+    color: var(--text-light);
+    padding: 15px 0;
+    min-height: 70px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sedikit bayangan */
+}
+
+header a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transisi hover */
+}
+
+header a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+header li {
+    display: inline-block; /* Pakai inline-block agar padding lebih baik */
+    margin-left: 20px; /* Spasi antar menu */
+}
+
+header #branding {
+    float: left;
+    display: flex;
+    align-items: center; /* Rata tengah vertikal */
+}
+
+header #branding h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+header nav {
+    float: right;
+    margin-top: 5px; /* Sesuaikan posisi nav */
+}
+
+/* --- Layout Konten Utama --- */
+h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.6em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color); /* Garis bawah */
+    padding-bottom: 10px;
+}
+
+/* --- Kartu (Card) --- */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px; /* Sudut lebih membulat */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Bayangan lebih halus */
+    max-width: 700px; /* Lebar card */
+    margin: 30px auto; /* Margin atas bawah lebih besar */
+    text-align: left;
+}
+
+.card p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.card ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+}
+
+.card ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.card ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Tombol (Button) --- */
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--text-light);
+    padding: 12px 25px; /* Padding lebih besar */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 8px; /* Sudut lebih membulat */
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transisi hover/active */
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #218838; /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Efek sedikit naik */
+}
+
+.btn-primary {
+    background: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #004085;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* --- Form --- */
+.form-group {
+    margin-bottom: 20px; /* Spasi antar form group */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 20px); /* Kurangi padding dari width */
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none; /* Hilangkan outline default browser */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Efek fokus */
+}
+
+/* --- Tabel --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Penting untuk border-radius di tabel */
+}
+
+table thead {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--bg-light); /* Warna selang-seling */
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef; /* Efek hover pada baris tabel */
+}
+
+
+/* --- Alerts --- */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.alert.alert { /* Default error/danger */
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* --- Daftar Mobil (di index.php) --- */
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Spasi antar item */
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.car-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    width: calc(33% - 25px); /* 3 item per baris */
+    max-width: 320px; /* Batasan lebar per item */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-item:hover {
+    transform: translateY(-5px); /* Efek naik saat hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.car-item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover; /* Pastikan gambar proporsional */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+.car-item h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: var(--primary-color);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.car-item p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1.05em;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px; /* Margin atas lebih besar */
+    background: var(--header-bg);
+    color: var(--text-light);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- Responsif (untuk layar kecil) --- */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    header nav, header #branding {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    header li {
+        margin: 0 10px;
+    }
+    .car-item {
+        width: calc(50% - 25px); /* 2 item per baris di tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    header #branding h1 {
+        font-size: 1.8em;
+    }
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header li {
+        margin: 5px 8px;
+    }
+    .car-item {
+        width: 100%; /* 1 item per baris di mobile */
+        max-width: none;
+    }
+    .card {
+        padding: 20px;
+    }
+    table th, table td {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+}
